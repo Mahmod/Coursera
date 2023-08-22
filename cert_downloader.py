@@ -38,7 +38,7 @@ def download_pdf_list(urls, save_directory):
         url = url.strip()  # Remove leading and trailing whitespace
         if validate_url(url):  # Validate the URL using the validators library
             pdf_name = os.path.basename(urlparse(url).path)  # Extract the filename from the URL
-            save_path = os.path.join(save_directory, pdf_name)
+            save_path = os.path.join(save_directory, pdf_name,".pdf")
             logging.info(f"Downloading {pdf_name} from {url}")
             download_pdf(url, save_path)
         else:
